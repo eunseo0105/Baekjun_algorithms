@@ -1,14 +1,28 @@
-import sys
+n = int(input())
 
-N = int(sys.stdin.readline())
-count = 0
+if n >= 10:
+    m = n % 5
+    if m == 0:
+        sum = 2 + n//5 - 2
+    elif m == 1:
+        sum = 3 + n//5 - 2
+    elif m == 2:
+        sum = 4 + n//5 - 2
+    elif m == 3:
+        sum = 3 + n//5 - 2
+    elif m == 4:
+        sum = 4 + n//5 - 2
+    else :
+        sum = -1
 
-while N >= 0:
-    if N % 5 == 0: 
-        count += (N // 5)
-        print(count)
-        break
-    N -= 3
-    count += 1 
 else:
-    print(-1)
+    if n == 3 or n == 5:
+        sum = 1
+    elif n == 6 or n == 8:
+        sum = 2
+    elif n == 9:
+        sum = 3
+    else :
+        sum = -1
+
+print(sum)
